@@ -694,6 +694,7 @@ const DuaApp: React.FC = () => {
           </p>
           <p className="text-green-200">
             - Al-Quran, Surah Al-Baqarah: 186
+            - Dibangunkan oleh drfendiameen@kliacustoms.net | Semoga bermanafaat
           </p>
         </div>
       </footer>
