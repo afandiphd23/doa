@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState, ChangeEvent } from 'react';
 
 // Inline component definitions to avoid import issues
 const Card = ({ children, className = "", ...props }: any) => (
@@ -516,8 +518,8 @@ const DuaApp: React.FC = () => {
 
   const filteredDuas = duas.filter(dua => {
     const matchesSearch = dua.arabic.includes(searchTerm) || 
-                         dua.transliteration.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         dua.malay.toLowerCase().includes(searchTerm.toLowerCase());
+                          dua.transliteration.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          dua.malay.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'Semua' || dua.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -547,7 +549,7 @@ const DuaApp: React.FC = () => {
               type="text"
               placeholder="Cari doa (Arab, transliterasi, atau Melayu)..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
               className="pl-10 py-3 text-lg border-2 border-green-200 focus:border-green-400"
             />
           </div>
